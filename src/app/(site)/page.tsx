@@ -1,15 +1,18 @@
 "use client";
 
 import { ArrowRight, BookOpenText, Eye, Lock, MessageSquare, Newspaper, ShieldCheck, Sparkles, UserCheck, Users } from "lucide-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Seal } from "@/components/brand";
 import { Avatar, Portrait } from "@/components/profile/portrait";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/overlay";
 import { useApp } from "@/lib/store";
-import { cn } from "@/lib/utils";
+
+// three.js is heavy and browser-only, so the hero art loads after the page is interactive.
+const HeroGlobe = dynamic(() => import("@/components/site/globe/hero-globe"), { ssr: false });
 
 const STEPS = [
   {
@@ -48,6 +51,7 @@ export default function Home() {
   const setPersona = useApp((s) => s.setPersona);
   const router = useRouter();
   const [inviteOpen, setInviteOpen] = useState(false);
+  const globeAnchor = useRef<HTMLDivElement>(null);
 
   const active = useMemo(() => profiles.filter((p) => p.status === "active"), [profiles]);
   const featured = useMemo(
@@ -57,27 +61,28 @@ export default function Home() {
   const countries = new Set(active.map((p) => p.country)).size;
   const industries = new Set(active.map((p) => p.industry)).size;
   const demoInvite = profiles.find((p) => p.invite.status === "sent" || p.invite.status === "opened");
-  const [a, b, c] = featured;
 
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-950 text-white">
-        <div className="grain absolute inset-0" />
-        <div className="absolute -right-40 -top-40 size-[640px] rounded-full bg-[radial-gradient(closest-side,rgb(187_139_63/0.18),transparent)]" />
-        <div className="relative mx-auto grid grid-cols-1 max-w-7xl gap-14 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-28 lg:pt-24">
-          <div className="animate-rise">
-            <p className="eyebrow flex items-center gap-2 text-gold-300">
+      <section className="relative isolate overflow-hidden bg-navy-950 text-white">
+        <HeroGlobe anchor={globeAnchor} members={active} />
+        <div className="grain pointer-events-none absolute inset-0" />
+        <div className="pointer-events-none absolute -left-48 -top-48 size-[760px] rounded-full bg-[radial-gradient(closest-side,rgb(60_79_120/0.32),transparent)]" />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-2 px-4 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pt-2">
+          <div className="lg:py-16">
+            <p className="eyebrow flex animate-rise items-center gap-2 text-gold-300">
               <Seal className="size-4" tip={false} /> By invitation · Verified by TRC
             </p>
-            <h1 className="display mt-6 text-[2.75rem] leading-[1.02] text-balance sm:text-6xl lg:text-[4.4rem]">
-              The private network for the leaders <em className="text-gold-300">shaping their economies.</em>
+            <h1 className="display mt-6 animate-rise text-[2.75rem] leading-[1.02] text-balance [animation-delay:80ms] sm:text-6xl lg:text-[4.4rem]">
+              The private network for the leaders{" "}
+              <em className="box-decoration-clone bg-linear-to-r from-gold-200 via-gold-300 to-gold-400 bg-clip-text pr-1 text-transparent">shaping their economies.</em>
             </h1>
-            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-white/70">
+            <p className="mt-7 max-w-xl animate-rise text-[17px] leading-relaxed text-white/70 [animation-delay:160ms]">
               CEO Network brings together the chief executives and business leaders featured in TRC reports, in a verified directory where every profile is
               prepared by TRC and published only with the leader&apos;s permission.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-9 flex animate-rise flex-wrap gap-3 [animation-delay:240ms]">
               <Button asChild size="lg" variant="gold">
                 <Link href="/directory">
                   Explore the directory <ArrowRight />
@@ -89,34 +94,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Fanned member cards */}
-          <div className="relative hidden min-h-[440px] lg:block" aria-hidden>
-            {[c, b, a].map((p, i) =>
-              p ? (
-                <div
-                  key={p.id}
-                  className={cn(
-                    "absolute w-[300px] rounded-2xl bg-white p-3 text-navy-950 shadow-pop ring-1 ring-black/5 transition-transform duration-700",
-                    i === 0 && "right-2 top-0 rotate-[7deg] scale-[0.92] brightness-[0.55]",
-                    i === 1 && "right-32 top-8 rotate-[-5deg] scale-[0.96] brightness-75",
-                    i === 2 && "right-14 top-24 rotate-[1.5deg] hover:rotate-0",
-                  )}
-                >
-                  <Portrait profile={p} className="aspect-[4/3] w-full rounded-xl" sizes="300px" />
-                  <div className="px-2 pb-1 pt-3.5">
-                    <p className="flex items-center gap-1.5 font-serif text-xl">
-                      {p.fullName} <Seal className="size-4" tip={false} />
-                    </p>
-                    <p className="mt-0.5 text-[13px] text-slate-500">
-                      {p.designation} · {p.company}
-                    </p>
-                  </div>
-                </div>
-              ) : null,
-            )}
-          </div>
+          {/* The globe is drawn behind the whole hero; this box only decides where it sits, and takes drags. */}
+          <div
+            ref={globeAnchor}
+            aria-hidden
+            className="aspect-square w-[min(112%,32rem)] touch-pan-y justify-self-center select-none motion-safe:cursor-grab motion-safe:active:cursor-grabbing lg:-my-10 lg:w-[112%] lg:max-w-none lg:justify-self-start"
+          />
         </div>
-        <div className="relative border-t border-white/10">
+        <div className="relative border-t border-white/10 bg-navy-950/40 backdrop-blur-[2px]">
           <dl className="mx-auto grid max-w-7xl grid-cols-2 divide-white/10 px-4 sm:px-6 md:grid-cols-4 md:divide-x lg:px-8">
             {[
               { k: "Verified leaders", v: active.length },
