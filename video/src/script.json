@@ -1,0 +1,9 @@
+[
+  { "id": "brand", "text": "", "hold": 2.6 },
+  { "id": "leaders", "text": "Every TRC report features the leaders shaping their country's economy. Leaders like you." },
+  { "id": "network", "text": "Now, there's a place for all of you to connect. Meet the CEO Network: a private, verified circle for the chief executives featured in TRC reports." },
+  { "id": "profile", "text": "And the best part? Your profile is already done. Built from your interview, and reviewed by your TRC Project Director." },
+  { "id": "join", "text": "Joining takes about a minute. Sign in, review your profile, and you're in." },
+  { "id": "control", "text": "It's private, too. Only verified members can see it, and you're always in control. Change it, or remove it, any time." },
+  { "id": "end", "text": "So, there's a seat saved for you. Join now, and start exploring the CEO Network, from The Report Company." }
+]

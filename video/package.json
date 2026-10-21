@@ -1,0 +1,26 @@
+{
+  "name": "ceo-network-intro-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Animated introduction to the CEO Network for invited CEOs, built with Remotion.",
+  "scripts": {
+    "voiceover": "node scripts/voiceover.mjs",
+    "studio": "remotion studio src/index.ts --port=3123",
+    "render": "remotion render src/index.ts Intro out/ceo-network-intro.mp4 --port=3123",
+    "render:no-captions": "remotion render src/index.ts Intro out/ceo-network-intro-no-captions.mp4 --port=3123 --props='{\"captions\":false}'",
+    "music": "node scripts/music.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/google-fonts": "4.0.537",
+    "@remotion/transitions": "4.0.537",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "kokoro-js": "1.2.1",
+    "typescript": "5.9.3"
+  }
+}

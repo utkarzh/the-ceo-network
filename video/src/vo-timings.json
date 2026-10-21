@@ -1,0 +1,492 @@
+[
+  {
+    "id": "leaders",
+    "file": "vo/leaders.wav",
+    "seconds": 5.95,
+    "words": [
+      {
+        "text": "Every",
+        "at": 0
+      },
+      {
+        "text": "TRC",
+        "at": 0.48
+      },
+      {
+        "text": "report",
+        "at": 0.9
+      },
+      {
+        "text": "features",
+        "at": 1.52
+      },
+      {
+        "text": "the",
+        "at": 2
+      },
+      {
+        "text": "leaders",
+        "at": 2.28
+      },
+      {
+        "text": "shaping",
+        "at": 2.52
+      },
+      {
+        "text": "their",
+        "at": 2.88
+      },
+      {
+        "text": "country's",
+        "at": 3.16
+      },
+      {
+        "text": "economy.",
+        "at": 3.42
+      },
+      {
+        "text": "Leaders",
+        "at": 4.82
+      },
+      {
+        "text": "like",
+        "at": 4.82
+      },
+      {
+        "text": "you.",
+        "at": 5.12
+      }
+    ]
+  },
+  {
+    "id": "network",
+    "file": "vo/network.wav",
+    "seconds": 10,
+    "words": [
+      {
+        "text": "Now,",
+        "at": 0
+      },
+      {
+        "text": "there's",
+        "at": 0.46
+      },
+      {
+        "text": "a",
+        "at": 0.84
+      },
+      {
+        "text": "place",
+        "at": 0.92
+      },
+      {
+        "text": "for",
+        "at": 1.12
+      },
+      {
+        "text": "all",
+        "at": 1.34
+      },
+      {
+        "text": "of",
+        "at": 1.56
+      },
+      {
+        "text": "you",
+        "at": 1.7
+      },
+      {
+        "text": "to",
+        "at": 1.8
+      },
+      {
+        "text": "connect.",
+        "at": 1.88
+      },
+      {
+        "text": "Meet",
+        "at": 3.04
+      },
+      {
+        "text": "the",
+        "at": 3.06
+      },
+      {
+        "text": "CEO",
+        "at": 3.26
+      },
+      {
+        "text": "Network:",
+        "at": 3.58
+      },
+      {
+        "text": "a",
+        "at": 4.66
+      },
+      {
+        "text": "private,",
+        "at": 4.78
+      },
+      {
+        "text": "verified",
+        "at": 5.42
+      },
+      {
+        "text": "circle",
+        "at": 5.6
+      },
+      {
+        "text": "for",
+        "at": 6.34
+      },
+      {
+        "text": "the",
+        "at": 6.7
+      },
+      {
+        "text": "chief",
+        "at": 6.82
+      },
+      {
+        "text": "executives",
+        "at": 7
+      },
+      {
+        "text": "featured",
+        "at": 7.38
+      },
+      {
+        "text": "in",
+        "at": 8.02
+      },
+      {
+        "text": "TRC",
+        "at": 8.36
+      },
+      {
+        "text": "reports.",
+        "at": 8.8
+      }
+    ]
+  },
+  {
+    "id": "profile",
+    "file": "vo/profile.wav",
+    "seconds": 7.45,
+    "words": [
+      {
+        "text": "And",
+        "at": 0
+      },
+      {
+        "text": "the",
+        "at": 0.36
+      },
+      {
+        "text": "best",
+        "at": 0.42
+      },
+      {
+        "text": "part?",
+        "at": 0.58
+      },
+      {
+        "text": "Your",
+        "at": 1.26
+      },
+      {
+        "text": "profile",
+        "at": 1.38
+      },
+      {
+        "text": "is",
+        "at": 1.74
+      },
+      {
+        "text": "already",
+        "at": 2.12
+      },
+      {
+        "text": "done.",
+        "at": 2.34
+      },
+      {
+        "text": "Built",
+        "at": 3.42
+      },
+      {
+        "text": "from",
+        "at": 3.42
+      },
+      {
+        "text": "your",
+        "at": 3.66
+      },
+      {
+        "text": "interview,",
+        "at": 3.78
+      },
+      {
+        "text": "and",
+        "at": 4.14
+      },
+      {
+        "text": "reviewed",
+        "at": 4.6
+      },
+      {
+        "text": "by",
+        "at": 4.86
+      },
+      {
+        "text": "your",
+        "at": 5.22
+      },
+      {
+        "text": "TRC",
+        "at": 5.34
+      },
+      {
+        "text": "Project",
+        "at": 5.76
+      },
+      {
+        "text": "Director.",
+        "at": 6.38
+      }
+    ]
+  },
+  {
+    "id": "join",
+    "file": "vo/join.wav",
+    "seconds": 4.45,
+    "words": [
+      {
+        "text": "Joining",
+        "at": 0
+      },
+      {
+        "text": "takes",
+        "at": 0.52
+      },
+      {
+        "text": "about",
+        "at": 0.68
+      },
+      {
+        "text": "a",
+        "at": 0.96
+      },
+      {
+        "text": "minute.",
+        "at": 0.96
+      },
+      {
+        "text": "Sign",
+        "at": 1.96
+      },
+      {
+        "text": "in,",
+        "at": 2
+      },
+      {
+        "text": "review",
+        "at": 2.52
+      },
+      {
+        "text": "your",
+        "at": 2.74
+      },
+      {
+        "text": "profile,",
+        "at": 2.88
+      },
+      {
+        "text": "and",
+        "at": 3.52
+      },
+      {
+        "text": "you're",
+        "at": 3.56
+      },
+      {
+        "text": "in.",
+        "at": 3.74
+      }
+    ]
+  },
+  {
+    "id": "control",
+    "file": "vo/control.wav",
+    "seconds": 7.525,
+    "words": [
+      {
+        "text": "It's",
+        "at": 0
+      },
+      {
+        "text": "private,",
+        "at": 0.42
+      },
+      {
+        "text": "too.",
+        "at": 0.68
+      },
+      {
+        "text": "Only",
+        "at": 1.8
+      },
+      {
+        "text": "verified",
+        "at": 1.8
+      },
+      {
+        "text": "members",
+        "at": 1.98
+      },
+      {
+        "text": "can",
+        "at": 2.6
+      },
+      {
+        "text": "see",
+        "at": 2.92
+      },
+      {
+        "text": "it,",
+        "at": 3.16
+      },
+      {
+        "text": "and",
+        "at": 3.32
+      },
+      {
+        "text": "you're",
+        "at": 3.54
+      },
+      {
+        "text": "always",
+        "at": 3.64
+      },
+      {
+        "text": "in",
+        "at": 3.98
+      },
+      {
+        "text": "control.",
+        "at": 4.14
+      },
+      {
+        "text": "Change",
+        "at": 5.32
+      },
+      {
+        "text": "it,",
+        "at": 5.32
+      },
+      {
+        "text": "or",
+        "at": 5.54
+      },
+      {
+        "text": "remove",
+        "at": 5.84
+      },
+      {
+        "text": "it,",
+        "at": 6.12
+      },
+      {
+        "text": "any",
+        "at": 6.588
+      },
+      {
+        "text": "time.",
+        "at": 7.057
+      }
+    ]
+  },
+  {
+    "id": "end",
+    "file": "vo/end.wav",
+    "seconds": 6.875,
+    "words": [
+      {
+        "text": "So,",
+        "at": 0
+      },
+      {
+        "text": "there's",
+        "at": 0.4
+      },
+      {
+        "text": "a",
+        "at": 0.7
+      },
+      {
+        "text": "seat",
+        "at": 0.78
+      },
+      {
+        "text": "saved",
+        "at": 0.96
+      },
+      {
+        "text": "for",
+        "at": 1.26
+      },
+      {
+        "text": "you.",
+        "at": 1.52
+      },
+      {
+        "text": "Join",
+        "at": 2.46
+      },
+      {
+        "text": "now,",
+        "at": 2.46
+      },
+      {
+        "text": "and",
+        "at": 2.72
+      },
+      {
+        "text": "start",
+        "at": 3.16
+      },
+      {
+        "text": "exploring",
+        "at": 3.36
+      },
+      {
+        "text": "the",
+        "at": 3.8
+      },
+      {
+        "text": "CEO",
+        "at": 4.08
+      },
+      {
+        "text": "Network,",
+        "at": 4.4
+      },
+      {
+        "text": "from",
+        "at": 4.92
+      },
+      {
+        "text": "The",
+        "at": 5.46
+      },
+      {
+        "text": "Report",
+        "at": 5.58
+      },
+      {
+        "text": "Company.",
+        "at": 5.8
+      }
+    ]
+  }
+]

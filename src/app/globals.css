@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  CEO Network design tokens                                          */
+/*  Navy carries authority, brass marks verification, slate does the  */
+/*  quiet work. Serif (Newsreader) for display, Inter for everything   */
+/*  functional — numbers included.                                    */
+/* ------------------------------------------------------------------ */
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+@theme {
+  --color-navy-50: #f3f5f9;
+  --color-navy-100: #e5e9f1;
+  --color-navy-200: #c9d1e1;
+  --color-navy-300: #a0aeca;
+  --color-navy-400: #7084ab;
+  --color-navy-500: #4f6491;
+  --color-navy-600: #3c4f78;
+  --color-navy-700: #2f3f61;
+  --color-navy-800: #22304d;
+  --color-navy-900: #172239;
+  --color-navy-950: #0d1526;
+
+  --color-gold-50: #fbf8f1;
+  --color-gold-100: #f5eddb;
+  --color-gold-200: #ebdab3;
+  --color-gold-300: #dfc285;
+  --color-gold-400: #d0a65c;
+  --color-gold-500: #bb8b3f;
+  --color-gold-600: #9d7132;
+  --color-gold-700: #7c5829;
+  --color-gold-800: #5f4322;
+
+  --color-canvas: #f4f5f7;
+  --color-paper: #fbfaf8;
+  --color-link: #2547a3;
+
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04), 0 1px 3px rgb(16 24 40 / 0.05);
+  --shadow-lift: 0 12px 32px -14px rgb(16 24 40 / 0.22), 0 2px 6px rgb(16 24 40 / 0.05);
+  --shadow-pop: 0 28px 70px -24px rgb(13 21 38 / 0.45);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade: fade 0.35s ease-out both;
+  --animate-shimmer: shimmer 1.8s linear infinite;
+  --animate-pulse-ring: pulse-ring 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgb(187 139 63 / 0.45); }
+    80%, 100% { box-shadow: 0 0 0 10px rgb(187 139 63 / 0); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-slate-900);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection {
+    background: var(--color-gold-200);
+    color: var(--color-navy-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-navy-400);
+    outline-offset: 2px;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@utility display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+}
+
+@utility skeleton {
+  background: linear-gradient(90deg, var(--color-slate-100) 0%, var(--color-slate-200) 50%, var(--color-slate-100) 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@utility select-chevron {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2364748b'%3E%3Cpath d='M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 18px;
+}
+
+@utility grain {
+  background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
